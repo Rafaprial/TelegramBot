@@ -2,11 +2,12 @@ import requests
 import time
 import threading
 from fastapi import FastAPI
+from app_parameters import Config
 
 # Define constants for Telegram and Kraken API
 
+API_TOKEN = Config.url
 
-API_TOKEN = ''
 KRAKEN = "https://api.kraken.com/0/public/Ticker?pair="
 
 BASE_URL = f'https://api.telegram.org/bot{API_TOKEN}'
@@ -73,7 +74,6 @@ def bot_worker():
     offset = None  # To start from the latest update
     while True:
         updates = get_updates(offset)
-        
         if updates['result']:
             message_id = get_last_update_id(updates)  # Get the last update ID
         
