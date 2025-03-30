@@ -6,7 +6,7 @@ from fastapi import FastAPI
 # Define constants for Telegram and Kraken API
 
 
-API_TOKEN = '7778114116:AAG55hOR94R5Ol-5NE_2JVL4poMOZg0bAHU'
+API_TOKEN = ''
 KRAKEN = "https://api.kraken.com/0/public/Ticker?pair="
 
 BASE_URL = f'https://api.telegram.org/bot{API_TOKEN}'
